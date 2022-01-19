@@ -14,8 +14,6 @@ def image_list(request):
     images = Image.objects.all()
     paginator = Paginator(images, 8)
     page = request.GET.get('page')
-    print("Qwerty qwerty ------------>", request.GET)
-    print("Request :          ->", request)
     try:
         images = paginator.page(page)
     except PageNotAnInteger:
