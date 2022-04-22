@@ -31,9 +31,6 @@ ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    # Local
-    'account.apps.AccountConfig',
-
     # Built in
     'django.contrib.admin',
     'django.contrib.auth',
@@ -49,6 +46,8 @@ INSTALLED_APPS = [
 
     # Local
     'images.apps.ImagesConfig',
+    'account.apps.AccountConfig',
+    'actions.apps.ActionsConfig'
 ]
 
 MIDDLEWARE = [
@@ -91,6 +90,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
 
 
 # Password validation
